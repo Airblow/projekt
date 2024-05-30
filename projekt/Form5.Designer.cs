@@ -47,6 +47,7 @@
             infoBoxComp = new Label();
             corAnswerCompLabel = new Label();
             correctAnswerComp = new Label();
+            dontKnowComp = new Button();
             SuspendLayout();
             // 
             // backButton
@@ -153,16 +154,17 @@
             resetButtonComp.TabIndex = 12;
             resetButtonComp.Text = "Reset";
             resetButtonComp.UseVisualStyleBackColor = true;
+            resetButtonComp.Click += resetButtonComp_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.BackColor = SystemColors.Control;
-            label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.ActiveCaptionText;
-            label3.Location = new Point(463, 297);
+            label3.Location = new Point(416, 222);
             label3.Name = "label3";
-            label3.Size = new Size(60, 23);
+            label3.Size = new Size(69, 28);
             label3.TabIndex = 13;
             label3.Text = "Fråga:";
             // 
@@ -170,39 +172,39 @@
             // 
             questionComp.AutoSize = true;
             questionComp.BackColor = SystemColors.Control;
-            questionComp.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            questionComp.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             questionComp.ForeColor = SystemColors.ActiveCaptionText;
-            questionComp.Location = new Point(540, 297);
+            questionComp.Location = new Point(495, 222);
+            questionComp.MaximumSize = new Size(400, 0);
             questionComp.Name = "questionComp";
-            questionComp.Size = new Size(69, 23);
+            questionComp.Size = new Size(81, 28);
             questionComp.TabIndex = 14;
             questionComp.Text = "Välj del";
             // 
             // label5
             // 
-            label5.AutoSize = true;
             label5.BackColor = SystemColors.Control;
             label5.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = SystemColors.ActiveCaptionText;
-            label5.Location = new Point(472, 347);
+            label5.Location = new Point(434, 334);
             label5.Name = "label5";
-            label5.Size = new Size(51, 23);
+            label5.Size = new Size(51, 27);
             label5.TabIndex = 15;
             label5.Text = "Svar:";
             // 
             // answerBoxComp
             // 
-            answerBoxComp.Location = new Point(540, 346);
+            answerBoxComp.Location = new Point(495, 334);
             answerBoxComp.Name = "answerBoxComp";
-            answerBoxComp.Size = new Size(125, 27);
+            answerBoxComp.Size = new Size(210, 27);
             answerBoxComp.TabIndex = 16;
             // 
             // answerSubmitComp
             // 
             answerSubmitComp.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            answerSubmitComp.Location = new Point(685, 347);
+            answerSubmitComp.Location = new Point(504, 381);
             answerSubmitComp.Name = "answerSubmitComp";
-            answerSubmitComp.Size = new Size(67, 26);
+            answerSubmitComp.Size = new Size(80, 35);
             answerSubmitComp.TabIndex = 17;
             answerSubmitComp.Text = "Svara";
             answerSubmitComp.UseVisualStyleBackColor = true;
@@ -214,7 +216,7 @@
             label6.BackColor = SystemColors.Control;
             label6.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = SystemColors.ActiveCaptionText;
-            label6.Location = new Point(452, 447);
+            label6.Location = new Point(374, 488);
             label6.Name = "label6";
             label6.Size = new Size(111, 23);
             label6.TabIndex = 18;
@@ -226,12 +228,12 @@
             infoBoxComp.BackColor = SystemColors.Control;
             infoBoxComp.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             infoBoxComp.ForeColor = SystemColors.ActiveCaptionText;
-            infoBoxComp.Location = new Point(452, 480);
+            infoBoxComp.Location = new Point(504, 488);
             infoBoxComp.MaximumSize = new Size(350, 0);
             infoBoxComp.Name = "infoBoxComp";
-            infoBoxComp.Size = new Size(71, 23);
+            infoBoxComp.Size = new Size(38, 23);
             infoBoxComp.TabIndex = 19;
-            infoBoxComp.Text = "*Insert*";
+            infoBoxComp.Text = "----";
             // 
             // corAnswerCompLabel
             // 
@@ -239,7 +241,7 @@
             corAnswerCompLabel.BackColor = SystemColors.Control;
             corAnswerCompLabel.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             corAnswerCompLabel.ForeColor = SystemColors.ActiveCaptionText;
-            corAnswerCompLabel.Location = new Point(406, 380);
+            corAnswerCompLabel.Location = new Point(368, 438);
             corAnswerCompLabel.Name = "corAnswerCompLabel";
             corAnswerCompLabel.Size = new Size(117, 23);
             corAnswerCompLabel.TabIndex = 20;
@@ -251,11 +253,22 @@
             correctAnswerComp.BackColor = SystemColors.Control;
             correctAnswerComp.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             correctAnswerComp.ForeColor = SystemColors.ActiveCaptionText;
-            correctAnswerComp.Location = new Point(540, 380);
+            correctAnswerComp.Location = new Point(504, 438);
             correctAnswerComp.Name = "correctAnswerComp";
             correctAnswerComp.Size = new Size(38, 23);
             correctAnswerComp.TabIndex = 21;
             correctAnswerComp.Text = "----";
+            // 
+            // dontKnowComp
+            // 
+            dontKnowComp.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dontKnowComp.Location = new Point(604, 381);
+            dontKnowComp.Name = "dontKnowComp";
+            dontKnowComp.Size = new Size(80, 35);
+            dontKnowComp.TabIndex = 22;
+            dontKnowComp.Text = "Vet inte";
+            dontKnowComp.UseVisualStyleBackColor = true;
+            dontKnowComp.Click += dontKnowComp_Click;
             // 
             // compPage
             // 
@@ -263,6 +276,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.HotTrack;
             ClientSize = new Size(1210, 751);
+            Controls.Add(dontKnowComp);
             Controls.Add(correctAnswerComp);
             Controls.Add(corAnswerCompLabel);
             Controls.Add(infoBoxComp);
@@ -309,5 +323,6 @@
         private Label infoBoxComp;
         private Label corAnswerCompLabel;
         private Label correctAnswerComp;
+        private Button dontKnowComp;
     }
 }

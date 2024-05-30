@@ -54,6 +54,20 @@ namespace projekt
             }
         }
 
+        public void DontKnow()
+        {
+            infoBoxComp.Text = currentQuestion.Info;
+            correctAnswerComp.Text = currentQuestion.Answer;
+        }
+
+        public void Reset()
+        {
+            infoBoxComp.Text = "----";
+            correctAnswerComp.Text = "----";
+            answerBoxComp.Text = null;
+            questionComp.Text = "Välj del";
+        }
+
         public compPage()
         {
             InitializeComponent();
@@ -161,6 +175,16 @@ namespace projekt
             questionComp.Text = currentQuestion.Question;
 
         }
+
+        private void dontKnowComp_Click(object sender, EventArgs e)
+        {
+            DontKnow();
+        }
+
+        private void resetButtonComp_Click(object sender, EventArgs e)
+        {
+            Reset();
+        }
     }
 
     public class QuestionsComp
@@ -195,7 +219,6 @@ namespace projekt
     public class HistoryQuestions
     {
         public static List<QuestionsComp> historyQuestionsList = new List<QuestionsComp>();
-
         public HistoryQuestions()
         {
             historyQuestionsList.Add(new QuestionsComp("när skapades MS-DOS?", "1980", "*placeholder*"));
@@ -208,7 +231,6 @@ namespace projekt
     public class HardwareQuestions
     {
         public static List<QuestionsComp> hardwareQuestionsList = new List<QuestionsComp>();
-
         public HardwareQuestions()
         {
             hardwareQuestionsList.Add(new QuestionsComp("Vad står ESD för?", "Electro Static Discharge", "Statisk elektrisitet kan totalt förstöra ens dator. Datorkomponenter klarar bara max 12 V, en elektrisk stöt kan ha effekten utav 10 000 V. Därför ta till med åtgärder när du fixar med hårdvaran i en dator."));
@@ -338,7 +360,7 @@ namespace projekt
             memoryQuestionsList.Add(new QuestionsComp("Vad står PROM för?", "Programmable ROM", "Programmable Read Only Memory fungerar som ROM, skillnaden är att PROM kan man programera om en gång"));
             memoryQuestionsList.Add(new QuestionsComp("Hur förvaras data i ett Kassettband? På ett...", "Magnetband", "Kassettband användes oftast för in- och uppslepning utav ljud, men användes även i vissa datorapplikationer"));
             memoryQuestionsList.Add(new QuestionsComp("Hur sparas data i en Diskett? På en...", "Magnetisk skiva", "Disketter var små magnetiska skivor med ett plastskydd. Från början kunde de bara spara 80kB 1971, till 1,44 MB 1984. De varierar i storlek, de finns i 8 tum, 5 och 1/4 tum, och 3,5 tum."));
-            memoryQuestionsList.Add(new QuestionsComp("Vad står CS för?", "Compact Disc", "I en CS skiva lagras datan i små gropar på en skiva som sedan läses av med hjälp utav en laser."));
+            memoryQuestionsList.Add(new QuestionsComp("Vad står CD för?", "Compact Disc", "I en CD skiva lagras datan i små gropar på en skiva som sedan läses av med hjälp utav en laser."));
             memoryQuestionsList.Add(new QuestionsComp("Hur mycket kan du lagra på en Blu-ray disk?", "50GB", "En Blu-ray disk läses av med en blå laser istället för röd, och man kan lagra 25GB på singel lagrad och 50GB på dubbellagrad, upp till 128GB med Quad-Layer BD."));
             memoryQuestionsList.Add(new QuestionsComp("Vad heter tiden när huvudet flyttas i en HDD?", "Söktid", "Söktiden i en HDD beror på hur lång tid det tar för läs- och skrivhuvudet att flytta sig från ett spår till ett annat."));
             memoryQuestionsList.Add(new QuestionsComp("Vad kallas de tårtformade delarna i en HDD?", "Sektorer", "En sektor är en del utav databandet i en HDD. Den minsta enheten är 512 B"));
