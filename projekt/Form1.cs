@@ -5,8 +5,6 @@ namespace projekt
         public startPage()
         {
             InitializeComponent();
-
-            utility.FormSize(this);
         }
 
         void start_Click(object sender, EventArgs e)

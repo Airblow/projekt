@@ -72,8 +72,6 @@ namespace projekt
         {
             InitializeComponent();
 
-            utility.FormSize(this);
-
             HistoryQuestions historyQuestions = new HistoryQuestions();
             HardwareQuestions hardwareQuestions = new HardwareQuestions();
             InternetQuestions internetQuestions = new InternetQuestions();
@@ -184,6 +182,15 @@ namespace projekt
         private void resetButtonComp_Click(object sender, EventArgs e)
         {
             Reset();
+        }
+
+        private void answerBoxComp_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Enter)
+            {
+                AnswerSubmit();
+                e.SuppressKeyPress = true;
+            }
         }
     }
 

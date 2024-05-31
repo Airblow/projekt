@@ -15,8 +15,6 @@ namespace projekt
         public engPage()
         {
             InitializeComponent();
-
-            utility.FormSize(this);
         }
 
         void backButton_Click(object sender, EventArgs e)

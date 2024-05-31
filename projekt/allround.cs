@@ -40,12 +40,6 @@ namespace projekt
             currentForm.Visible = false;
 
         }
-        public static void FormSize(Form currentForm)
-        {
-            currentForm.MinimumSize = new Size(1228, 798);
-            currentForm.MaximumSize = new Size(1228, 798);
-        }
-
 
     }
 

@@ -15,8 +15,6 @@ namespace projekt
         public subjectPage()
         {
             InitializeComponent();
-
-            utility.FormSize(this);
         }
 
         void mathButton_Click(object sender, EventArgs e)
