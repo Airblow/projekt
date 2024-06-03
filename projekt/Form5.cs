@@ -56,8 +56,15 @@ namespace projekt
 
         public void DontKnow()
         {
-            infoBoxComp.Text = currentQuestion.Info;
-            correctAnswerComp.Text = currentQuestion.Answer;
+            if(currentQuestion == null)
+            {
+                MessageBox.Show("Välj del först");
+            }
+            else
+            {
+                infoBoxComp.Text = currentQuestion.Info;
+                correctAnswerComp.Text = currentQuestion.Answer;
+            }
         }
 
         public void Reset()
@@ -356,7 +363,7 @@ namespace projekt
             memoryQuestionsList.Add(new QuestionsComp("Vad står RAM för?", "Random Access Memory", "RAM används för att temporärt lagra data och programinstruktioner som används utav processorn. RAM är ett flyktigt minne, alltså det som lagras försviner när strömmen stängs av. RAM ger snabb tillgång till data"));
             memoryQuestionsList.Add(new QuestionsComp("Vad står DRAM för?", "Dynamic RAM", "DRAM läcker data, vilket betyder att det måste återskrivas hela tiden med några millisekunders mellanrum"));
             memoryQuestionsList.Add(new QuestionsComp("Vad står SDRAM för?", "Synchronous DRAM", "SDRAM är en snabbare version utan DRAM. Mycket på grund utav att SDRAM använder sig utav en synkroniserad klocka. Så data kan överföras synkroniserat vilket gör överföring mer effektivt och minskar latensen."));
-            memoryQuestionsList.Add(new QuestionsComp("Vad står SRAM för?", "Static RAM", "SRAM till skillnad från andra RAM är ett icke flyktigt minne, och behöver inte uppdateras för att behålla sin data som DRAM, åtan behåller den sålänge ström finns. SRAM är ett väldigt stabilt och snabbt minne, och det är ett idealiskt cache-minne."));
+            memoryQuestionsList.Add(new QuestionsComp("Vad står SRAM för?", "Static RAM", "SRAM till skillnad från andra RAM är ett icke flyktigt minne, och behöver inte uppdateras för att behålla sin data som DRAM, utan behåller den sålänge ström finns. SRAM är ett väldigt stabilt och snabbt minne, och det är ett idealiskt cache-minne."));
             memoryQuestionsList.Add(new QuestionsComp("Vad står SIPP för?", "Single In-Line Pin Package", "SIPP har flera DRAM-minnen på ett kretskort, SIPP använde 30-pinar kontakt, vilket gjorde att de böjdes lätt vilket förstörde minnet. Användes mycket i äldre datorer"));
             memoryQuestionsList.Add(new QuestionsComp("Vad står SIMM för?", "Single In-Line Memory Module?", "SIMM minnen har 8 eller 16 minneskapslar och 30 eller 72 pinnar. Består utav flera RAM-chip som monterades på ett litet kretskort med kontakter längst ena kanten."));
             memoryQuestionsList.Add(new QuestionsComp("Vad står DIMM för?", "Dual In-Line Memory Module", "DIMM används i moderna datorer. Har separata kontakert på var sin sida av modulen för bättre prestanda. Det finns flera olika DIMM, DDR DIMM, DDR2 DIMM, DDR3 DIM, DDR4 DIM, DDR SDRAM etc."));
